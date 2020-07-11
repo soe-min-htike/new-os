@@ -7,10 +7,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
+
+<link href="{{asset('vendor-dashboard/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+<link href="{{asset('css-dashboard/simple-sidebar.css')}}" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/app.js') }}" defer></script>    
+<script src="{{asset('vendor-dashboard/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('vendor-dashboard/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,6 +28,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    @yield('content')
+    @include('layouts.dashboard');
+    {{-- @yield('content') --}}
+
 </body>
 </html>

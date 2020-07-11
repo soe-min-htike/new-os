@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Product;
+use App\Category;
 
-class PostController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $categories= Category::all();
+        return view('admin/addproduct',compact('categories'));
     }
 
     /**
@@ -81,5 +85,4 @@ class PostController extends Controller
     {
         //
     }
-
 }

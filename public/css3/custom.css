@@ -1,11 +1,11 @@
 /* CSS Document */
 
-.bg-black{ background-color: rgb(88, 12, 78);}
+.bg-black{ background-color: #5D3F18;}
 
 .carousel-caption{ top:200px}
 
-.bg-orange{background-color:#f0644f; color: aliceblue; font-weight: 600; text-align: center;}
-.m-right{border: 2px solid #f0644f; border-right: 2px solid white;}
+.bg-orange{background-color:#f0644f; color: rgb(188, 202, 214); font-weight: 600; text-align: center;}
+.m-right{border: 2px solid #f0644f; border-right: 2px solid rgb(249, 247, 252);}
 
 .underline{width: 100px; height: 2px; background-color: orangered;}
 
