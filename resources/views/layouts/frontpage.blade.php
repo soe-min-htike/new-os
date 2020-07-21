@@ -49,7 +49,7 @@
           @if (Route::has('login'))
           <div class="top-right links">
             @auth
-            <a href="{{ url('/home') }}">Home</a>
+            <a href="{{ url('/home') }}">Dashboard</a>
             @else
             <a href="{{ route('login') }}">Login</a>
 
@@ -127,7 +127,7 @@
       <div class="container">
             <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
               <input class="form-control form-control ml-3 w-75" type="search" placeholder="Search" aria-label="Search"><button
-                class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
       </div>
         

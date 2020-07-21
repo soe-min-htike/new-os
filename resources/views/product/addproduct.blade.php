@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('title','Dashboard')
 @section('content')
-<form method="" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
+    @csrf
     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
     <div class="container mt-3">
         <div class="col-md-8 offset-md-2">
@@ -47,6 +48,4 @@
         </div>
     </div>
 </form>
-
-
 @endsection

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PostController@index')->name('welcome');
+Route::get('product/{id}/show','admin\ProductController@show')->name('product.detail');
 
 
 Auth::routes();
@@ -22,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>'auth'], function(){
     Route::get('product/add','ProductController@index')->name('product.add');
+    Route::post('product/add','ProductController@store')->name('product.store');
+    Route::get('product/{id}/edit','ProductController@edit')->name('product.edit');
     
     Route::get('category/add','CategoryController@index')->name('category.add');
     Route::post('category/add','CategoryController@store')->name('category.store');

@@ -14,8 +14,9 @@
             <table class="table table-striped">
                 @foreach ($categories as $category)
                 <tr>
+                    <td>{{$category->id}}</td>
                     <td><strong>{{$category->name}}</strong></td>
-                    <td><a href="{{url("admin/category/$category->id/edit/")}}" class="btn btn-info">Edit</a> 
+                    <td class="float-right"><a href="{{url("admin/category/$category->id/edit/")}}" class="btn btn-info">Edit</a> 
                         <a href="{{url("admin/category/$category->id/delete")}}" class="btn btn-danger" 
                             onclick="return confirm('Are you sure to delete this Category?')">Delete</a></td>
                 </tr>

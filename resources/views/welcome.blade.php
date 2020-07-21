@@ -1,7 +1,7 @@
 @extends('layouts.frontpage')
 @section('content')
     
-<div class="container mt-5">
+<div class="container mt-3">
    	<div class="row">
 	  <h3>HIGH HEEL SHOES</h3>
 	</div>
@@ -10,58 +10,23 @@
 	</div>
 </div>
 
-
-<div class="container mt-5 pb-5">
+<div class="container mt-3 pb-5">
 	<div class="row">
-		<div class="col-md-3">
+		@foreach ($products as $product)
+			<div class="col-md-3 mt-3">
 			<div class="card">
-			  <img src="img/show 1.jpg" alt="card-1" class="card-img-top">
+			  <img src="{{asset('Upload/'. $product->feature_image)}}" alt="No Image" class="card-img-top">
 				<div class="card-body">
-				  <h5>Black Shoes</h5>
-				  <h6>$34.00</h6>
-					<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-			  </div>
+					<h5>{{$product->title}}</h5>
+					<h6>{{number_format($product->price)}} Ks.</h6>
+					<a class="btn btn-info" href="{{url("/product/$product->id/show")}}">
+						<i class="fa fa-eye" aria-hidden="true"></i> View Detail</a>
+				</div>
 			</div>
-		</div>
-		
-		<div class="col-md-3">
-			<div class="card">
-			  <img src="img/show 2.jpg" alt="card-1" class="card-img-top">
-				<div class="card-body">
-				  <h5>Red Shoes</h5>
-				  <h6>$34.00</h6>
-					<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-			  </div>
 			</div>
-		</div>
-		
-		<div class="col-md-3">
-			<div class="card">
-			  <img src="img/show 3.jpg" alt="card-1" class="card-img-top">
-				<div class="card-body">
-				  <h5>Modern Shoes</h5>
-				  <h6>$34.00</h6>
-					<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-			  </div>
-			</div>
-		</div>
-		
-		
-		
-		<div class="col-md-3">
-			<div class="card">
-			  <img src="img/show 4.jpg" alt="card-1" class="card-img-top">
-				<div class="card-body">
-				  <h5>High Hill Shoes</h5>
-				  <h6>$34.00</h6>
-					<button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-			  </div>
-			</div>
-		</div>
+		@endforeach
 	</div>
 </div>
-
-
 </div>
 
 
